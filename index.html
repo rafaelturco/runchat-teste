@@ -1643,7 +1643,7 @@
    aria-label="Fale conosco no WhatsApp"
    style="
      position: fixed;
-     bottom: 24px;
+     bottom: 96px;
      right: 24px;
      z-index: 999;
      width: 56px;
@@ -1722,17 +1722,11 @@
   function acceptCookies() {
     localStorage.setItem('runchat_cookies_accepted', 'true');
     document.getElementById('cookie-banner').style.display = 'none';
-    const waBtn = document.querySelector('a[href*="wa.me"]');
-    if (waBtn) waBtn.style.bottom = '24px';
   }
 
   // Check if already accepted
-  const waBtn = document.querySelector('a[href*="wa.me"]');
   if (localStorage.getItem('runchat_cookies_accepted') === 'true') {
     document.getElementById('cookie-banner').style.display = 'none';
-  } else {
-    // Move WhatsApp button above cookie banner
-    if (waBtn) waBtn.style.bottom = '96px';
   }
 </script>
 </body>
