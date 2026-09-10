@@ -1722,11 +1722,17 @@
   function acceptCookies() {
     localStorage.setItem('runchat_cookies_accepted', 'true');
     document.getElementById('cookie-banner').style.display = 'none';
+    const waBtn = document.querySelector('a[href*="wa.me"]');
+    if (waBtn) waBtn.style.bottom = '24px';
   }
 
   // Check if already accepted
+  const waBtn = document.querySelector('a[href*="wa.me"]');
   if (localStorage.getItem('runchat_cookies_accepted') === 'true') {
     document.getElementById('cookie-banner').style.display = 'none';
+  } else {
+    // Move WhatsApp button above cookie banner
+    if (waBtn) waBtn.style.bottom = '96px';
   }
 </script>
 </body>
